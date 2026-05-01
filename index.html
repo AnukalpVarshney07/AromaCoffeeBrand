@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROMA | Premium Specialty Coffee</title>
+    <!-- Google Fonts: Playfair Display for headings, Montserrat for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --accent: #c9a050; /* Elegant Gold */
+            --dark: #0f0f0f;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text-light: #f4f4f4;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1447933630913-221b44455c3a?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 8vw, 9rem);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-inline: auto;
+            color: #ccc;
+        }
+
+        .btn-premium {
+            padding: 1.5rem 4rem;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-premium:hover {
+            background: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 0 20px rgba(201, 160, 80, 0.4);
+        }
+
+        /* --- Menu Section --- */
+        section {
+            padding: 10rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--accent);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+
+        .menu-item {
+            background: var(--glass);
+            padding: 3rem;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+        }
+
+        .menu-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item .price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 5rem 10%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Mobile Menu Hide/Show (Simplified) */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            html { font-size: 55%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AROMA.</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">Philosophy</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <i class="fa-solid fa-bag-shopping" style="font-size: 2rem; cursor: pointer;"></i>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Art of the <br><i>Perfect</i> Roast</h1>
+            <p>Sustainably sourced, artisanally roasted, and delivered with passion. Experience the height of coffee culture.</p>
+            <button class="btn-premium">Explore the Collection</button>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="section-title">
+            <h2>Our Signature Blends</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1512568448817-79a0d29c3140?q=80&w=600&auto=format&fit=crop" alt="Ethiopian Yirgacheffe">
+                <h3>Midnight Velvet</h3>
+                <p>Notes of dark chocolate and black cherry.</p>
+                <div class="price">$24.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600&auto=format&fit=crop" alt="Cold Brew">
+                <h3>Golden Crema</h3>
+                <p>Smooth, honey-toned light roast for the purist.</p>
+                <div class="price">$28.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=600&auto=format&fit=crop" alt="Espresso">
+                <h3>Alpine Peak</h3>
+                <p>Bold, spicy undertones with a clean finish.</p>
+                <div class="price">$22.00</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AROMA COFFEE ROASTERS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
